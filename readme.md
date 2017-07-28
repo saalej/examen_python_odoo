@@ -1,5 +1,6 @@
 
-1.- CREAR UNA CUENTA DE GITHUB / Si ya tienes una, omitir este paso
+1.- CREAR UNA CUENTA DE GITHUB / Si ya tienes una, omitir este paso.
+
 2.- Haz un fork de este repositorio y realiza el siguiente desarrollo.
 
 
@@ -25,7 +26,9 @@
 
 8.- Genera un permiso de acceso para que solo los usuarios a los que se les asigne este permiso puedan ver el los menus de acceso a las vistas creadas.
 
+
 9.- Genera otro tipo de permiso en el que solo ciertos usuarios puedan crear nuevos equipos de computo y modificarlos.
+
 
 10.- Genera un reporte PDF que liste los equipos asignados a cada usuario, el cual deberá ser accesible desde el menu "Acción" de la vista "Form" del usuario en cuestion. El menu deberá llamarse "Imprimir Lista de Equipos"
 
