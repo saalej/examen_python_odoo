@@ -12,11 +12,11 @@
 5. De acuerdo a los modelos creados y heredados, genera las vistas necesarias para generar un CRUD, teniendo en cuenta que deben existir 2 vistas basicas (Tree, Form), recuerda que la imagen del equipo debe poderse visualizar y cargar en la vista "Form"
 
 6. Genera los menus necesarios para acceder a las diferentes vistas creadas siguiendo la siguiente estructura:
-    [Equipos de Computo] (root_menu)
-        [Catálogos]
-            [Sistemas Operativos]
-            [Tipos de Equipo]
-        [Equipos]
+    * [Equipos de Computo] (root_menu)
+        * [Catálogos]
+            * [Sistemas Operativos]
+            * [Tipos de Equipo]
+        * [Equipos]
 
 7. Realizar herencia de la vista Form de usuarios ubicada en Configuracion/Usuarios y adiciona una pestaña llamada "Equipos Asignados" dentro de la cual agregarás un "Grid" con la lista de equipos asignados al usuario.
 
