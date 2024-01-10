@@ -1,7 +1,7 @@
 
 ## Examen Odoo
 
-### [Fecha del Examen]
+### [Miercoles 10 de enero de 2024]
 
 1. CREAR UNA CUENTA DE GITHUB / Si ya tienes una, omitir este paso.
 
