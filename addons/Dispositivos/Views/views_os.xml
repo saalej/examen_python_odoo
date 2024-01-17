@@ -6,6 +6,7 @@
         <field name = "model">sistemas_operativos</field>
         <field name = "arch" type = "xml">
             <tree>
+                <field name="id"/>
                 <field name = "name"/>
                 <field name = "version"/>
             </tree>
@@ -20,6 +21,7 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="id" string = "ID" readonly="1"/>
                         <field name="name" string = "Nombre"/>
                         <field name = "version" string = "Version"/>
                     </group>

@@ -6,6 +6,7 @@
         <field name = "model">tipo_equipos</field>
         <field name = "arch" type = "xml">
             <tree>
+                <field name="id"/>
                 <field name = "name"/>
             </tree>
         </field>
@@ -19,6 +20,7 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="id" string = "ID" readonly="1"/>
                         <field name="name" string = "Nombre"/>
                     </group>
                 </sheet>
