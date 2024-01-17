@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit" model="ir.ui.view">
+        <field name="name">res.users.from.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref = "base.view_users_form"/>
+        <field name="arch" type = "xml">
+            <xpath expr="//field[@name='login']" position="after">
+                <field name="num_employee" string = "Num. de Empleado"/>
+                <field name="date_admission" string = "Fecha de ingreso"/>
+                <field name="num_imss" string = "Num. del IMSS"/>
+            </xpath>
+        </field>
+    </record>
+
+    
+</odoo>
