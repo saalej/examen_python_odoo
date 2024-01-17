@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree -->
+    <record id = "view_tree_type" model = "ir.ui.view">
+        <field name = "name">view.tree.type</field>
+        <field name = "model">tipo_equipos</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_form_type" model="ir.ui.view">
+        <field name="name">view.form.type</field>
+        <field name="model">tipo_equipos</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string = "Nombre"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action ~ Active tree/form view -->
+    <record id="action_view_type" model="ir.actions.act_window">
+        <field name = "name">Tipos de equipo</field>
+        <field name = "res_model">tipo_equipos</field>
+        <field name = "view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+    <menuitem id = "menu_type" name = "Tipo de equipos" parent = "" sequence="10" action="action_view_type"/>
+    <menuitem id = "menu_type_tree" name = "Tree View" parent = "menu_type" action = "action_view_type"/>
+    <menuitem id = "menu_type_form" name = "Form View" parent = "menu_type" action = "action_view_type"/>
+    
+</odoo>
