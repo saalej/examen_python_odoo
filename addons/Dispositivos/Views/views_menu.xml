@@ -6,21 +6,14 @@
     
     <!-- Submenu Equipo -->
     <menuitem id = "menu_equipo" name = "Equipo" parent = "menu_root" sequence="10" action="action_view_equipos"/>
-    <menuitem id = "menu_equipo_tree" name = "Tree View" parent = "menu_equipo" action = "action_view_equipos"/>
-    <menuitem id = "menu_equipo_form" name = "Form View" parent = "menu_equipo" action = "action_view_equipos"/>
     
     <!-- Submenu Catalogos-->
     <menuitem id = "catalogos" name = "Catalogos" parent = "menu_root" sequence="10"/>
 
     <!-- Submenu Catalogo - Sistemas Operativo -->
     <menuitem id = "menu_os" name = "Sistemas operativos" parent = "catalogos" sequence="10" action="action_view_os"/>
-    <menuitem id = "menu_os_tree" name = "Tree View" parent = "menu_os" action = "action_view_os"/>
-    <menuitem id = "menu_os_form" name = "Form View" parent = "menu_os" action = "action_view_os"/>
-    
+
     <!-- Submenu Catalogo - Tipos de equipos -->
     <menuitem id = "menu_type" name = "Tipo de equipos" parent = "catalogos" sequence="10" action="action_view_type"/>
-    <menuitem id = "menu_type_tree" name = "Tree View" parent = "menu_type" action = "action_view_type"/>
-    <menuitem id = "menu_type_form" name = "Form View" parent = "menu_type" action = "action_view_type"/>
-    
 
 </odoo>
