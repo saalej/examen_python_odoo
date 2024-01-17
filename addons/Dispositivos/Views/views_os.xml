@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree -->
+    <record id = "view_tree_os" model = "ir.ui.view">
+        <field name = "name">view.tree.os</field>
+        <field name = "model">sistemas_operativos</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name"/>
+                <field name = "version"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_form_os" model="ir.ui.view">
+        <field name="name">view.form.os</field>
+        <field name="model">sistemas_operativos</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string = "Nombre"/>
+                        <field name = "version" string = "Version"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action ~ Active tree/form view -->
+    <record id="action_view_os" model="ir.actions.act_window">
+        <field name = "name">Sistemas Operativos</field>
+        <field name = "res_model">sistemas_operativos</field>
+        <field name = "view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+    <menuitem id = "menu_os" name = "Sistemas operativos" parent = "" sequence="10" action="action_view_os"/>
+    <menuitem id = "menu_os_tree" name = "Tree View" parent = "menu_os" action = "action_view_os"/>
+    <menuitem id = "menu_os_form" name = "Form View" parent = "menu_os" action = "action_view_os"/>
+    
+</odoo>

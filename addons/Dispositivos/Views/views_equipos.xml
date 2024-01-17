@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree -->
+    <record id = "view_tree_equipos" model = "ir.ui.view">
+        <field name = "name">view.tree.equipos</field>
+        <field name = "model">equipos_computo</field>
+        <field name = "arch" type = "xml">
+            <tree>
+                <field name = "name"/>
+                <field name = "os_id"/>
+                <field name = "ram"/>
+                <field name = "storage"/>
+                <field name = "serial_number"/>
+                <field name = "user"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_form_equipos" model="ir.ui.view">
+        <field name="name">view.form.equipos</field>
+        <field name="model">equipos_computo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string = "Nombre"/>
+                        <field name = "os_id" string = "Id - Sistema Operativo"/>
+                        <field name = "ram" string = "Memoria RAM"/>
+                        <field name = "storage" string = "Capacidad del disco duro" />
+                        <field name = "serial_number" string = "Numero de serie"/>
+                        <field name = "user" string = "Usuario asignado"/>
+                        <field name = "image" widget = "image" string = "Imagen"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action ~ Active tree/form view -->
+    <record id="action_view_equipos" model="ir.actions.act_window">
+        <field name = "name">Equipos de computo</field>
+        <field name = "res_model">equipos_computo</field>
+        <field name = "view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+    <menuitem id = "menu_equipos" name = "Equipos de computo" parent = "" sequence="10" action="action_view_equipos"/>
+    <menuitem id = "menu_equipos_tree" name = "Tree View" parent = "menu_equipos" action = "action_view_equipos"/>
+    <menuitem id = "menu_equipos_form" name = "Form View" parent = "menu_equipos" action = "action_view_equipos"/>
+    
+</odoo>

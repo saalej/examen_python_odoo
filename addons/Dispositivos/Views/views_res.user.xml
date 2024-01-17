@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_users_form_inherit" model="ir.ui.view">
         <field name="name">res.users.from.inherit</field>
         <field name="model">res.users</field>
@@ -11,7 +12,5 @@
                 <field name="num_imss" string = "Num. del IMSS"/>
             </xpath>
         </field>
-    </record>
-
-    
+    </record>    
 </odoo>
