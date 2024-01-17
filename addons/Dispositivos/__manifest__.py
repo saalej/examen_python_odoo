@@ -1,6 +1,6 @@
 {
-    "name" : "Examen Odoo",
-    "description" : "Evaluacion de conocimientos y manejo de Odoo",
+    "name" : "Administracion de dispositivos",
+    "description" : "Sistema para controlar la distribucion de los equipos",
     "author": "Marian Herrera",
     "depends": ['base'],
     "data" : [
