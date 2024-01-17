@@ -8,6 +8,7 @@
         'Views/views_equipments.xml',
         'Views/views_types_equipment.xml',
         'Views/views_os.xml',
+        'Views/views_menu.xml',
         'security.xml'
     ],
 }

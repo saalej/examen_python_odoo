@@ -44,10 +44,4 @@
         <field name = "view_mode">tree,form</field>
     </record>
 
-
-    <!-- Menu -->
-    <menuitem id = "menu_equipos" name = "Equipos de computo" parent = "" sequence="10" action="action_view_equipos"/>
-    <menuitem id = "menu_equipos_tree" name = "Tree View" parent = "menu_equipos" action = "action_view_equipos"/>
-    <menuitem id = "menu_equipos_form" name = "Form View" parent = "menu_equipos" action = "action_view_equipos"/>
-    
 </odoo>

@@ -32,11 +32,4 @@
         <field name = "res_model">tipo_equipos</field>
         <field name = "view_mode">tree,form</field>
     </record>
-
-
-    <!-- Menu -->
-    <menuitem id = "menu_type" name = "Tipo de equipos" parent = "" sequence="10" action="action_view_type"/>
-    <menuitem id = "menu_type_tree" name = "Tree View" parent = "menu_type" action = "action_view_type"/>
-    <menuitem id = "menu_type_form" name = "Form View" parent = "menu_type" action = "action_view_type"/>
-    
 </odoo>
