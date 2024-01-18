@@ -7,9 +7,11 @@
         <field name="inherit_id" ref = "base.view_users_form"/>
         <field name="arch" type = "xml">
             <xpath expr="//field[@name='login']" position="after">
-                <field name="num_employee" string = "Num. de Empleado"/>
-                <field name="date_admission" string = "Fecha de ingreso"/>
-                <field name="num_imss" string = "Num. del IMSS"/>
+                <group>
+                    <field name="num_employee" string="Num. de Empleado" readonly="1"/>
+                    <field name="date_admission" string = "Fecha de ingreso"/>
+                    <field name="num_imss" string = "Num. del IMSS"/>
+                </group>
             </xpath>
         </field>
     </record>

@@ -1,50 +1,76 @@
 <odoo>
-    
+    <!-- Permisos adicionales / Crear y modificar de equipos -->
+
+    <!--    Security group ~ Visualizacion de vistas    -->
+    <record id="group_equipos_user" model="res.groups">
+        <field name="name">Permisos adicionales / Visualizacion de vistas</field>
+        <field name="implied_ids" eval = "[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!--    res.users    -->
     <record id = "model_access_equipos" model="ir.model.access">
         <field name = "name">model.access.equipos</field>
         <field name = "model_id" ref = "base.model_res_users"/>
-        <field name = "group_id" ref = "base.group_system"/>
+        <field name = "group_id" ref = "group_equipos_user"/>
 
         <field name = "perm_read" eval = "1"/>
+        
+    </record>
+
+    <!--    Equipos de computo ~ General    -->
+    <record id="model_access_equipos_computo" model="ir.model.access">
+        <field name="name">model.access.equipos_computo</field>
+        <field name="model_id" ref = "model_equipos_computo"/>
+        <field name="group_id" ref = "group_equipos_user"/>
+
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <!--    Sistemas operativos    -->
+    <record id="model_access_sistemas_operativos" model="ir.model.access">
+        <field name="name">model.access.sistemas_operativos</field>
+        <field name="model_id" ref = "model_sistemas_operativos"/>
+        <field name="group_id" ref = "group_equipos_user"/>
+
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <!--    Tipos de equipos    -->
+    <record id="model_access_tipo_equipos" model="ir.model.access">
+        <field name="name">model.access.tipo_equipos</field>
+        <field name="model_id" ref="model_tipo_equipos"/>
+        <field name="group_id" ref = "group_equipos_user"/>
+
+        <field name="perm_read" eval="1"/>
+    </record>
+
+    <!-- Permisos adicionales / Crear y modificar de equipos -->
+
+    <!--    Security group ~ Creacion de equipo    -->
+    <record id="group_created_equipment" model="res.groups">
+        <field name="name">Permisos adicionales / Crear y modificar de equipos</field>
+        <field name="implied_ids" eval = "[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!--    Equipos de computo ~ Admin    -->
+    <record id="model_access_equipos_computo_admin" model="ir.model.access">
+        <field name="name">model.access.equipos_computo</field>
+        <field name="model_id" ref = "model_equipos_computo"/>
+        <field name="group_id" ref = "group_created_equipment"/>
+
+        <field name="perm_read" eval="1"/>
         <field name = "perm_write" eval = "1"/>
         <field name = "perm_create" eval = "1"/>
         <field name = "perm_unlink" eval = "1"/>
     </record>
 
-    <!-- Equipos de computo -->
-    <record id="model_access_equipos_computo" model="ir.model.access">
-        <field name="name">model.access.equipos_computo</field>
-        <field name="model_id" ref="model_equipos_computo"/>
-        <field name="group_id" ref="base.group_user"/>
-
-        <field name="perm_read" eval="1"/>
-        <field name="perm_write" eval="1"/>
-        <field name="perm_create" eval="1"/>
-        <field name="perm_unlink" eval="1"/>
-    </record>
-
-    <!-- Sistemas operativos -->
-    <record id="model_access_sistemas_operativos" model="ir.model.access">
+    <!--    Sistemas operativos    -->
+    <record id="model_access_sistemas_operativos_admin" model="ir.model.access">
         <field name="name">model.access.sistemas_operativos</field>
-        <field name="model_id" ref="model_sistemas_operativos"/>
-        <field name="group_id" ref="base.group_user"/>
+        <field name="model_id" ref = "model_sistemas_operativos"/>
+        <field name="group_id" ref = "group_created_equipment"/>
 
         <field name="perm_read" eval="1"/>
-        <field name="perm_write" eval="1"/>
-        <field name="perm_create" eval="1"/>
-        <field name="perm_unlink" eval="1"/>
-    </record>
-
-    <!-- Tipos de equipos -->
-    <record id="model_access_tipo_equipos" model="ir.model.access">
-        <field name="name">model.access.tipo_equipos</field>
-        <field name="model_id" ref="model_tipo_equipos"/>
-        <field name="group_id" ref="base.group_user"/>
-
-        <field name="perm_read" eval="1"/>
-        <field name="perm_write" eval="1"/>
-        <field name="perm_create" eval="1"/>
-        <field name="perm_unlink" eval="1"/>
     </record>
 </odoo>
  
