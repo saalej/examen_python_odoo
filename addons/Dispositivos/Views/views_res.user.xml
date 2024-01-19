@@ -10,6 +10,7 @@
                 <field name="num_employee" string="Num. de Empleado" readonly="1"/>
                 <field name="date_admission" string = "Fecha de ingreso"/>
                 <field name="num_imss" string = "Num. del IMSS"/>
+                <!-- <field name="num_equipment_assigned" string = "Num. de equipos Asignados"/> -->
             </group>
         </field>
     </record>
@@ -36,7 +37,7 @@
         <field name="arch" type = "xml">
             <notebook position = "inside">
                 <page name="assigned_equipment_grid" string="Equipos asignados">
-                    <field name="equipment_ids" widgets = "many2many_tags" domain="[('user', '=', False)]" />
+                    <field name="equipment_ids"/>
                 </page>
             </notebook>
         </field>

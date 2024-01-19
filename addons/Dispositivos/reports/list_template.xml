@@ -16,6 +16,7 @@
                                         <th>Nombre del Equipo</th>
                                         <th>Sistema Operativo</th>
                                         <th>Memoria RAM</th>
+                                        <th>Capacidad del Disco Duro</th>
                                         <th>Numero de serie</th>
                                     </tr>
                                 </thead>

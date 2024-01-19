@@ -7,15 +7,21 @@ class ResUsersInherit(models.Model):
     num_employee = fields.Char(string = "Num. de Empleado", readonly=True, size = 50)
     date_admission = fields.Date(string = "Fecha de Ingreso")
     num_imss = fields.Char(string = "Num. de IMSS", size = 50)
+    #num = fields.Integer(string="Num. de equipos Asignados", compute="count_equipments", store=True)
 
     # Campos heredados
     equipment_ids = fields.Many2many('equipos_computo', 'user_equipos_computo_rel', 'user_id', 'equipos_computo_id', string ="Equipos asignados")
-    
+
     @api.model
     def create(self, values):
         values['num_employee'] = self.env['ir.sequence'].next_by_code('EmpNum') or "/"
         return super(ResUsersInherit, self).create(values)
-
+    
+    @api.depends('equipment_ids')
+    def count_equipments(self):
+        for user in self:
+                user.numero_equipos_asignados = len(user.equipment_ids)
+    
 class Equipos_Computo(models.Model):
     _name = "equipos_computo"
 
