@@ -11,9 +11,6 @@
             <field name="num_employee">000001</field>
             <field name="date_admission">2022-01-01</field>
             <field name="num_imss">123456</field>
-
-            <field name="groups_See_id" eval="[(4, ref('Dispositivos.group_equipos_user'))]"/>
-            <field name="groups_created_id" eval="[(4, ref('Dispositivos.group_created_equipment'))]"/>
         </record>
 
         <!-- Usuario 2 -->
@@ -26,7 +23,6 @@
             <field name="date_admission">2022-02-01</field>
             <field name="num_imss">654321</field>
             
-            <field name="groups_created_id" eval="[(4, ref('Dispositivos.group_created_equipment'))]"/>
         </record>
 
         <!-- Usuario 3 -->
@@ -39,7 +35,6 @@
             <field name="date_admission">2022-03-01</field>
             <field name="num_imss">987654</field>
 
-            <field name="groups_created_id" eval="[(4, ref('Dispositivos.group_created_equipment'))]"/>
         </record>
 
         <!-- Usuario 4 -->
@@ -52,7 +47,6 @@
             <field name="date_admission">2022-04-01</field>
             <field name="num_imss">456789</field>
 
-            <field name="groups_See_id" eval="[(4, ref('Dispositivos.group_equipos_user'))]"/>
         </record>
 
         <!-- Usuario 5 -->
@@ -65,8 +59,6 @@
             <field name="date_admission">2022-05-01</field>
             <field name="num_imss">321654</field>
 
-            <field name="groups_See_id" eval="[(4, ref('Dispositivos.group_equipos_user'))]"/>
-            <field name="groups_created_id" eval="[(4, ref('Dispositivos.group_created_equipment'))]"/>
         </record>
 
     </data>

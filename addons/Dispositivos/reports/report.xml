@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <report id = 'report_list' 
-                string = "Imprimir Lista de equipos" 
+                string = "Lista de equipos" 
                 model = "res.users"
                 report_type = "qweb-pdf"
                 name = "Dispositivos.report_list_template"

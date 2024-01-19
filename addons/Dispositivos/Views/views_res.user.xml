@@ -10,7 +10,7 @@
                 <field name="num_employee" string="Num. de Empleado" readonly="1"/>
                 <field name="date_admission" string = "Fecha de ingreso"/>
                 <field name="num_imss" string = "Num. del IMSS"/>
-                <!-- <field name="num_equipment_assigned" string = "Num. de equipos Asignados"/> -->
+                <!--field name="numero_equipos_asignados" string = "Num. de equipos Asignados"/-->
             </group>
         </field>
     </record>
@@ -29,7 +29,8 @@
         </field>
     </record>
 
-    <!-- Pestaña ~ Equipo Asignados -->
+
+    <!-- Pestaña ~ Equipo Asignados-->
     <record id="grid_assigned_equipment" model="ir.ui.view">
         <field name="name">res.users.assigned.equipment</field>
         <field name="model">res.users</field>
@@ -38,10 +39,10 @@
             <notebook position = "inside">
                 <page name="assigned_equipment_grid" string="Equipos asignados">
                     <field name="equipment_ids">
-                        <!--button string = "Eliminar" type = "object" name = "unlink_equipment" icon = "fa-trash-o"/-->
+                        <button string = "Eliminar" type = "object" name = "unlink_equipment" icon = "fa-trash-o"/>
                     </field>
                 </page>
             </notebook>
         </field>
-    </record>
+    </record> 
 </odoo>

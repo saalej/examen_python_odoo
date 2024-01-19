@@ -7,25 +7,26 @@ class ResUsersInherit(models.Model):
     num_employee = fields.Char(string = "Num. de Empleado", readonly=True, size = 50)
     date_admission = fields.Date(string = "Fecha de Ingreso")
     num_imss = fields.Char(string = "Num. de IMSS", size = 50)
-    #numero_equipos_asignados = fields.Integer(string="Num. de equipos Asignados", compute="count_equipments", store=True)
-
+    #numero_equipos_asignados = fields.Integer(string="Num. de equipos asignados", compute="_compute_numero_equipos_asignados", store=True)
+    
     # Campos heredados
     equipment_ids = fields.Many2many('equipos_computo', 'user_equipos_computo_rel', 'user_id', 'equipos_computo_id', string ="Equipos asignados")
 
     # Sequence
     @api.model
-    def create(self, values):
-        """
+    def create_sequence(self, values):
         sequence = self.env['ir.sequence'].create({
-            'name': 'EmpNum',
-            'code': 'custom_emp_sequence',
-            'implementation': 'standard',
-            'padding': 6,  # Ajusta el padding según la longitud deseada
-            'number_increment': 1,
-            'number_next_actual': 6,  # Puedes ajustar este valor si deseas iniciar desde un número diferente
-        })"""
+            "name" : "EmpNum",
+            "code" : "custom_emp_sequence",
+            "implementation": "standard",
+            "padding": 6,  
+            "number_increment" : 1,
+            "number_next_actual" : 6,  
+            "prefix" : "",
+            "suffix" : ""
+        })
 
-        values['num_employee'] = self.env['ir.sequence'].next_by_code('EmpNum') or "/"
+        values['num_employee'] = sequence.env['ir.sequence'].next_by_code('EmpNum') or "/"
         return super(ResUsersInherit, self).create(values)
     
     # Grid
@@ -48,12 +49,6 @@ class ResUsersInherit(models.Model):
         user = self.env['res.users'].browse(user_id)
         equipment_records = user.equipment_ids
         return equipment_records
-
-    # Count assigned devices
-    @api.depends('equipment_ids')
-    def count_equipments(self):
-        for user in self:
-                user.numero_equipos_asignados = len(user.equipment_ids)
     
 class Equipos_Computo(models.Model):
     _name = "equipos_computo"
@@ -77,4 +72,5 @@ class Tipo_Equipos(models.Model):
     _name = "tipo_equipos"
 
     name = fields.Char(string = "tipo_equipo", size = 50)
+    
     
