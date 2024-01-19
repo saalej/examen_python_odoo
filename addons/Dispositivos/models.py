@@ -17,6 +17,19 @@ class ResUsersInherit(models.Model):
         values['num_employee'] = self.env['ir.sequence'].next_by_code('EmpNum') or "/"
         return super(ResUsersInherit, self).create(values)
     
+    def write(self, values):
+        result = super(ResUsersInherit, self).write(values)
+        self.update_user_assigned_equipment(self)
+        return result
+
+    def unlink_equipment(self):
+        self.equipment_ids.write({'user': None})
+        return super(ResUsersInherit, self).unlink()
+
+    def update_user_assigned_equipment(self, user):
+        if user.equipment_ids:
+            user.equipment_ids.write({'user': user.id})
+    
     @api.depends('equipment_ids')
     def count_equipments(self):
         for user in self:
