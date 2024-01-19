@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id = 'report_list' 
+                string = "Imprimir Lista de equipos" 
+                model = "equipos_computo"
+                report_type = "qweb-pdf"
+                name = "Dispositivos.report_list_template"
+        />
+    </data>
+</odoo>

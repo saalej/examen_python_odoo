@@ -4,11 +4,13 @@
     "author": "Marian Herrera",
     "depends": ['base'],
     "data" : [
-        'Views/views_res.user.xml',
-        'Views/views_equipments.xml',
-        'Views/views_types_equipment.xml',
-        'Views/views_os.xml',
-        'Views/views_menu.xml',
+        'views/views_res.user.xml',
+        'views/views_equipments.xml',
+        'views/views_types_equipment.xml',
+        'views/views_os.xml',
+        'views/views_menu.xml',
+        'reports/report.xml',
+        'reports/list_template.xml',
         'security.xml'
     ],
 }

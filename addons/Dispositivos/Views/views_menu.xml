@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    
     <!-- Menu Equipos de Computo -->
     <menuitem id = "menu_root" name = "Equipos de Computo" parent = "" sequence="10"/>
     
@@ -12,7 +11,7 @@
 
     <!-- Submenu Catalogo - Sistemas Operativo -->
     <menuitem id = "menu_os" name = "Sistemas operativos" parent = "catalogos" sequence="10" action="action_view_os"/>
-
+    
     <!-- Submenu Catalogo - Tipos de equipos -->
     <menuitem id = "menu_type" name = "Tipo de equipos" parent = "catalogos" sequence="10" action="action_view_type"/>
 

@@ -9,13 +9,12 @@ class ResUsersInherit(models.Model):
     num_imss = fields.Char(string = "Num. de IMSS", size = 50)
 
     # Campos heredados
-    equipment_ids = fields.One2many('equipos_computo', 'user', string ="Equipos asignados")
+    equipment_ids = fields.Many2many('equipos_computo', 'user_equipos_computo_rel', 'user_id', 'equipos_computo_id', string ="Equipos asignados")
     
     @api.model
     def create(self, values):
         values['num_employee'] = self.env['ir.sequence'].next_by_code('EmpNum') or "/"
         return super(ResUsersInherit, self).create(values)
-
 
 class Equipos_Computo(models.Model):
     _name = "equipos_computo"
@@ -26,9 +25,9 @@ class Equipos_Computo(models.Model):
     ram = fields.Char(string = "memoria_ram", size = 50)
     storage = fields.Char(string = "capacidad_disco_duro", size = 50)
     serial_number = fields.Char(string = "numero_de_serie", size = 50)
-    user = fields.Many2one("res.users", string = "usuario_asignado_id", inverse_name = "equiptment_ids")# Enlazar con res_users
+    user = fields.Many2one('res.users', string='Usuario asignado', ondelete='restrict')# Enlazar con res_users
     image = fields.Binary(string = "imagen", attachment = True)
-    
+
 class OS(models.Model):
     _name = "sistemas_operativos"
 

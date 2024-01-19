@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--  -->
+    <!-- Form view -->
     <record id="view_users_form_inherit" model="ir.ui.view">
         <field name="name">res.users.from.inherit</field>
         <field name="model">res.users</field>
         <field name="inherit_id" ref = "base.view_users_form"/>
         <field name="arch" type = "xml">
-            <xpath expr="//field[@name='login']" position="after">
-                <group>
-                    <field name="num_employee" string="Num. de Empleado" readonly="1"/>
-                    <field name="date_admission" string = "Fecha de ingreso"/>
-                    <field name="num_imss" string = "Num. del IMSS"/>
-                </group>
-            </xpath>
+            <group>
+                <field name="num_employee" string="Num. de Empleado" readonly="1"/>
+                <field name="date_admission" string = "Fecha de ingreso"/>
+                <field name="num_imss" string = "Num. del IMSS"/>
+            </group>
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="view_users_tree_inherit" model="ir.ui.view">
+        <field name="name">res.users.tree.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="num_employee"/>
+                <field name="date_admission"/>
+                <field name="num_imss"/>
+            </tree>
         </field>
     </record>
 
@@ -24,7 +36,7 @@
         <field name="arch" type = "xml">
             <notebook position = "inside">
                 <page name="assigned_equipment_grid" string="Equipos asignados">
-                    <field name="equipment_ids" widgets = "many2many_tags"/>
+                    <field name="equipment_ids" widgets = "many2many_tags" domain="[('user', '=', False)]" />
                 </page>
             </notebook>
         </field>
