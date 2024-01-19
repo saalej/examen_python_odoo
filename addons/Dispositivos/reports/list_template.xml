@@ -21,12 +21,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr t-foreach = "docs" t-as = "equipo">
-                                        <td><span t-field = "equipo.name"/></td>
-                                        <td><span t-field = "equipo.os_id"/></td>
-                                        <td><span t-field = "equipo.ram"/></td>
-                                        <td><span t-field = "equipo.storage"/></td>
-                                        <td><span t-field = "equipo.serial_number"/></td>
+                                    <tr t-foreach="o.get_assigned_equipment(o.id)" t-as="equipo">
+                                        <td><span t-field="equipo.name"/></td>
+                                        <td><span t-field="equipo.os_id"/></td>
+                                        <td><span t-field="equipo.ram"/></td>
+                                        <td><span t-field="equipo.storage"/></td>
+                                        <td><span t-field="equipo.serial_number"/></td>
                                     </tr>
                                 </tbody>
                             </table>

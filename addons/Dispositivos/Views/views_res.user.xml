@@ -38,7 +38,7 @@
             <notebook position = "inside">
                 <page name="assigned_equipment_grid" string="Equipos asignados">
                     <field name="equipment_ids">
-                        <button string = "Eliminar" type = "object" name = "unlink_equipment" icon = "fa-trash-o"/>
+                        <!--button string = "Eliminar" type = "object" name = "unlink_equipment" icon = "fa-trash-o"/-->
                     </field>
                 </page>
             </notebook>

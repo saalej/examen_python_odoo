@@ -7,16 +7,28 @@ class ResUsersInherit(models.Model):
     num_employee = fields.Char(string = "Num. de Empleado", readonly=True, size = 50)
     date_admission = fields.Date(string = "Fecha de Ingreso")
     num_imss = fields.Char(string = "Num. de IMSS", size = 50)
-    #num = fields.Integer(string="Num. de equipos Asignados", compute="count_equipments", store=True)
+    #numero_equipos_asignados = fields.Integer(string="Num. de equipos Asignados", compute="count_equipments", store=True)
 
     # Campos heredados
     equipment_ids = fields.Many2many('equipos_computo', 'user_equipos_computo_rel', 'user_id', 'equipos_computo_id', string ="Equipos asignados")
 
+    # Sequence
     @api.model
     def create(self, values):
+        """
+        sequence = self.env['ir.sequence'].create({
+            'name': 'EmpNum',
+            'code': 'custom_emp_sequence',
+            'implementation': 'standard',
+            'padding': 6,  # Ajusta el padding según la longitud deseada
+            'number_increment': 1,
+            'number_next_actual': 6,  # Puedes ajustar este valor si deseas iniciar desde un número diferente
+        })"""
+
         values['num_employee'] = self.env['ir.sequence'].next_by_code('EmpNum') or "/"
         return super(ResUsersInherit, self).create(values)
     
+    # Grid
     def write(self, values):
         result = super(ResUsersInherit, self).write(values)
         self.update_user_assigned_equipment(self)
@@ -30,6 +42,14 @@ class ResUsersInherit(models.Model):
         if user.equipment_ids:
             user.equipment_ids.write({'user': user.id})
     
+    # Report
+    @api.model
+    def get_assigned_equipment(self, user_id):
+        user = self.env['res.users'].browse(user_id)
+        equipment_records = user.equipment_ids
+        return equipment_records
+
+    # Count assigned devices
     @api.depends('equipment_ids')
     def count_equipments(self):
         for user in self:

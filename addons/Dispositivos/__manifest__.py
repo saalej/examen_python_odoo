@@ -4,6 +4,7 @@
     "author": "Marian Herrera",
     "depends": ['base'],
     "data" : [
+        #'data/default_information.xml',
         'views/views_res.user.xml',
         'views/views_equipments.xml',
         'views/views_types_equipment.xml',
