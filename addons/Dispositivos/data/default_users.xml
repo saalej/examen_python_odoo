@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-
-        <!-- Usuario 1 -->
+    <data>
+        <!-- Usuario -->
         <record id="user_default_1" model="res.users">
-            <field name="name">Usuario 1</field>
+            <field name="name">Marian</field>
             <field name="login">user1</field>
             <field name="email">user1@example.com</field>
             <field name="password">password1</field>
@@ -13,21 +12,19 @@
             <field name="num_imss">123456</field>
         </record>
 
-        <!-- Usuario 2 -->
         <record id="user_default_2" model="res.users">
-            <field name="name">Usuario 2</field>
+            <field name="name">Jacqueline</field>
             <field name="login">user2</field>
             <field name="email">user2@example.com</field>
             <field name="password">password2</field>
             <field name="num_employee">000002</field>
             <field name="date_admission">2022-02-01</field>
             <field name="num_imss">654321</field>
-            
+        
         </record>
 
-        <!-- Usuario 3 -->
         <record id="user_default_3" model="res.users">
-            <field name="name">Usuario 3</field>
+            <field name="name">Vianka</field>
             <field name="login">user3</field>
             <field name="email">user3@example.com</field>
             <field name="password">password3</field>
@@ -37,9 +34,8 @@
 
         </record>
 
-        <!-- Usuario 4 -->
         <record id="user_default_4" model="res.users">
-            <field name="name">Usuario 4</field>
+            <field name="name">Carolina</field>
             <field name="login">user4</field>
             <field name="email">user4@example.com</field>
             <field name="password">password4</field>
@@ -49,17 +45,15 @@
 
         </record>
 
-        <!-- Usuario 5 -->
         <record id="user_default_5" model="res.users">
-            <field name="name">Usuario 5</field>
+            <field name="name">Maria</field>
             <field name="login">user5</field>
             <field name="email">user5@example.com</field>
             <field name="password">password5</field>
             <field name="num_employee">000005</field>
             <field name="date_admission">2022-05-01</field>
             <field name="num_imss">321654</field>
-
         </record>
-
+        
     </data>
 </odoo>

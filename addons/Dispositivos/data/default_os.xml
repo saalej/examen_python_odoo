@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- sistemas_operativos -->
+        <record id="os1" model="sistemas_operativos">
+            <field name = "name">Windows</field>
+            <field name = "version">10 LTSC 2019</field>
+        </record>
+
+        <record id="os2" model="sistemas_operativos">
+            <field name = "name">macOS</field>
+            <field name = "version">Sonoma (versión 14)</field>
+        </record>
+
+        <record id="os3" model="sistemas_operativos">
+            <field name = "name">Ubuntu Linux</field>
+            <field name = "version">22.04.3 LTS</field>
+        </record>
+
+        <record id="os4" model="sistemas_operativos">
+            <field name = "name">Android</field>
+            <field name = "version">Current</field>
+        </record>
+
+        <record id="os5" model="sistemas_operativos">
+            <field name = "name">iOS</field>
+            <field name = "version">Current</field>
+        </record>
+        
+    
+    </data>
+</odoo>

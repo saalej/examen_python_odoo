@@ -15,20 +15,25 @@ class ResUsersInherit(models.Model):
     # Sequence
     @api.model
     def create_sequence(self, values):
-        sequence = self.env['ir.sequence'].create({
-            "name" : "EmpNum",
-            "code" : "custom_emp_sequence",
-            "implementation": "standard",
-            "padding": 6,  
-            "number_increment" : 1,
-            "number_next_actual" : 6,  
-            "prefix" : "",
-            "suffix" : ""
-        })
+        if not values.get('num_employee'):
+            sequence = self.env['ir.sequence'].create({
+                'name': 'Employee_Number_Sequence',
+                'code': 'emp_number',
+                'prefix': '',
+                'padding': 6,
+                'number_next_actual': 6,  
+                'implementation': 'standard'
+            })
 
-        values['num_employee'] = sequence.env['ir.sequence'].next_by_code('EmpNum') or "/"
+            num_employee = sequence.next_by_code('emp_number') or '/'
+            values['num_employee'] = num_employee
+
         return super(ResUsersInherit, self).create(values)
     
+    @api.model
+    def create(self, values):
+        return self.create_sequence(values)
+
     # Grid
     def write(self, values):
         result = super(ResUsersInherit, self).write(values)

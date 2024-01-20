@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- Equipos -->
+        <record id="device1" model="equipos_computo">
+            <field name="name">Dell G15 Ryzen Edition #1</field>
+            
+            <field name="ram">16 GB</field>
+            <field name="storage">512 GB SSD</field>
+            <field name="serial_number">SN123456</field>
+
+        </record>
+
+        <record id="device2" model="equipos_computo">
+            <field name="name">HP Spectre x360 #1</field>
+
+            <field name="ram">8 GB</field>
+            <field name="storage">256 GB SSD</field>
+            <field name="serial_number">SN789012</field>
+        </record>
+
+        <record id="device3" model="equipos_computo">
+            <field name="name">Dell Inspiron 5420 All-in-One 23.8" #1</field>
+            <field name="ram">16 GB</field>
+            <field name="storage">1 TB + 256 GB SSD</field>
+            <field name="serial_number">SN459823</field>
+        </record>
+
+        <record id="device4" model="equipos_computo">
+            <field name = "name">Motorola Edge 40 #1</field>
+            <field name = "ram">8 GB</field>
+            <field name = "storage">256 GB</field>
+            <field name = "serial_number">SN654321</field>
+        </record>
+
+        <record id="device5" model="equipos_computo">
+            <field name="name">iPhone 15 pro #1</field>
+            <field name="ram">8 GB</field>
+            <field name="storage">256 GB</field>
+            <field name="serial_number">SN789062</field>
+        </record>
+
+        <record id="device6" model="equipos_computo">
+            <field name="name">iPad 12 mini #1</field>
+            <field name="ram">4 GB</field>
+            <field name="storage">256 GB</field>
+            <field name="serial_number">SN499713</field>
+        </record>
+
+        <record id="device7" model="equipos_computo">
+            <field name = "name">Huawei Matepad 11 #1</field>
+            <field name = "ram">8 GB</field>
+            <field name = "storage">128 GB</field>
+            <field name = "serial_number">SN458456</field>
+        </record>
+
+        <record id="device8" model="equipos_computo">
+            <field name="name">iPad 12 mini #2</field>
+            <field name="ram">4 GB</field>
+            <field name="storage">256 GB</field>
+            <field name="serial_number">SN499713</field>
+        </record>
+
+        <record id="device9" model="equipos_computo">
+            <field name = "name">Dell G15 Ryzen Edition #2</field>
+            <field name = "ram">16 GB</field>
+            <field name = "storage">512 GB SSD</field>
+            <field name = "serial_number">SN123786</field>
+        </record>
+
+        <record id="device10" model="equipos_computo">
+            <field name="name">Dell Inspiron 5420 All-in-One 23.8" #2</field>
+            <field name="ram">16 GB</field>
+            <field name="storage">1 TB + 256 GB SSD</field>
+            <field name="serial_number">SN459713</field>
+        </record>
+        
+    </data>
+</odoo>

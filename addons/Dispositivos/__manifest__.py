@@ -4,7 +4,10 @@
     "author": "Marian Herrera",
     "depends": ['base'],
     "data" : [
-        'data/default_information.xml',
+        'data/default_users.xml',
+        'data/default_tipos.xml',
+        'data/default_os.xml',
+        'data/default_devices.xml',
 
         'views/views_res.user.xml',
         'views/views_equipments.xml',

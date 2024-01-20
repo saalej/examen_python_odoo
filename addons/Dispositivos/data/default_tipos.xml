@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- tipos de equipo (PC, LAPTOP, CELULAR, TABLET) -->
+        <record id="type1" model="tipo_equipos">
+            <field name="name">PC</field>
+        </record>
+
+        <record id="type2" model="tipo_equipos">
+            <field name="name">Laptop</field>
+        </record>
+
+        <record id="type3" model="tipo_equipos">
+            <field name="name">Celular</field>
+        </record>
+
+        <record id="type4" model="tipo_equipos">
+            <field name="name">Tablet</field>
+        </record>
+    
+    </data>
+</odoo>
